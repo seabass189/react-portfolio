@@ -1,24 +1,24 @@
 import React from 'react';
 import './App.css';
+import {Link, Routes, Route} from 'react-router-dom';
+import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World!</h1>
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <nav>
+        <Link to='/'>Home</Link><br></br>
+        <Link to='/about'>About</Link>
+      </nav>
+
+      <Routes>
+        <Route path='/' element={<h1>Home!! mimis time</h1>}></Route>
+        <Route path='/about' element={<h1>About!! me me me</h1>}></Route>
+      </Routes>
+
+      <Main/>
     </div>
   );
 }
