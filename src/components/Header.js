@@ -13,18 +13,18 @@ function Header() {
 
     return (
         <header className={navToggle ? 'nav-open' : ''}>
-            <div class="logo">
+            <div className="logo">
                 {/* <img src="img/devjane.png" alt="" /> */}
             </div>
-            <button class="nav-toggle" aria-label="toggle navigation" onClick={toggleNav}>
-                <span class="hamburger"></span>
+            <button className="nav-toggle" aria-label="toggle navigation" onClick={toggleNav}>
+                <span className="hamburger"></span>
             </button>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link" onClick={resetNavToggle}>Home</a></li>
-                    <li class="nav__item"><a href="#services" class="nav__link" onClick={resetNavToggle}>My Services</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link" onClick={resetNavToggle}>About me</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link" onClick={resetNavToggle}>My Work</a></li>
+            <nav className="nav">
+                <ul className="nav__list">
+                    <li className="nav__item"><a href="#home" className="nav__link" onClick={resetNavToggle}>Home</a></li>
+                    <li className="nav__item"><a href="#services" className="nav__link" onClick={resetNavToggle}>My Services</a></li>
+                    <li className="nav__item"><a href="#about" className="nav__link" onClick={resetNavToggle}>About me</a></li>
+                    <li className="nav__item"><a href="#work" className="nav__link" onClick={resetNavToggle}>My Work</a></li>
                 </ul>
             </nav>
         </header>
