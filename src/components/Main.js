@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import headshot from '../assets/sebastian.jpg';
+import projectImg from '../assets/proj.png'
 
-function Main() {
+function Main(props) {
+    console.log('props', props);
+    const {pathname, hash, key} = useLocation();
+    console.log('loc', useLocation());
+
+    useEffect(() => {
+        if(hash === '') {
+            window.scrollTo(0,0);
+        }
+
+        else {
+            setTimeout(() => {
+                const id = hash.replace('#', '');
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView();
+                }
+            }, 0);
+        }
+    }, [pathname, hash, key])
+
     return (
         <>
             {/* Introduction */}
@@ -41,7 +63,7 @@ function Main() {
             {/* About me */}
             <section className="about-me" id="about">
             <h2 className="section__title section__title--about">Who I am</h2>
-            <p className="section__subtitle section__subtitle--about">Designer & developer based out of NYC</p>
+            <p className="section__subtitle section__subtitle--about">Developer based out of LA</p>
             
             <div className="about-me__body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -58,14 +80,14 @@ function Main() {
                 
                 <div className="portfolio">
                     {/* Portfolio item 01 */}
-                    <a href="portfolio-item.html" className="portfolio__item">
-                        <img src="img/portfolio-01.jpg" alt="" className="portfolio__img"/>
-                    </a>
+                    <Link to="/projects/1" className="portfolio__item">
+                        <img src={projectImg} alt="" className="portfolio__img"/>
+                    </Link>
                     
                     {/* Portfolio item 02 */}
-                    <a href="portfolio-item.html" className="portfolio__item">
-                        <img src="img/portfolio-02.jpg" alt="" className="portfolio__img"/>
-                    </a>
+                    <Link to="/projects/2" className="portfolio__item">
+                        <img src={[projectImg]} alt="" className="portfolio__img"/>
+                    </Link>
                 </div>
             </section>
         </>

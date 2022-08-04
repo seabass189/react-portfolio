@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
     const [navToggle, setNavToggle] = useState(false);
@@ -21,10 +22,10 @@ function Header() {
             </button>
             <nav className="nav">
                 <ul className="nav__list">
-                    <li className="nav__item"><a href="#home" className="nav__link" onClick={resetNavToggle}>Home</a></li>
-                    <li className="nav__item"><a href="#services" className="nav__link" onClick={resetNavToggle}>My Services</a></li>
-                    <li className="nav__item"><a href="#about" className="nav__link" onClick={resetNavToggle}>About me</a></li>
-                    <li className="nav__item"><a href="#work" className="nav__link" onClick={resetNavToggle}>My Work</a></li>
+                    <li className="nav__item"><Link to='/home#home' className="nav__link" onClick={resetNavToggle}>Home</Link></li>
+                    <li className="nav__item"><Link to='home#services' className="nav__link" onClick={resetNavToggle}>My Services</Link></li>
+                    <li className="nav__item"><Link to='home#about' className="nav__link" onClick={resetNavToggle}>About me</Link></li>
+                    <li className="nav__item"><Link to='/home#work' className="nav__link" onClick={resetNavToggle}>My Work</Link></li>
                 </ul>
             </nav>
         </header>

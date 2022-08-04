@@ -1,112 +1,41 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-function Project(props) {
+function Project() {
+    window.scrollTo(0,0);
+    const {id} = useParams()
+    console.log('id', id);
+    //todo: load the project info
+    const proj = {
+        title: 'Project long', 
+        title2: 'Title long',
+        subtitle: 'A short subtitle', 
+        img: "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg", 
+        subImg: "https://i.natgeofe.com/n/3faa2b6a-f351-4995-8fff-36d145116882/domestic-dog_16x9.jpg", 
+        desc1: 'Desc line numero uno foo', 
+        desc2: 'Desc line numero dos foo', 
+        desc3: 'Desc line numero tres foo', 
+        githubLink: 'https://github.com/seabass189/dice-game'}
     return (
         <>
-            <!-- Introduction -->
-            <section class="intro" id="home">
+            <section class="intro">
                 <h1 class="section__title section__title--intro">
-                    Hi, I am <strong>Jane Smith</strong>
+                    {proj.title}<strong>{proj.title2}</strong>
                 </h1>
-                <p class="section__subtitle section__subtitle--intro">front-end dev</p>
-                <img src="img/dev-jane-01.jpg" alt="a picture of Jane Smith smiling" class="intro__img">
+                <p class="section__subtitle section__subtitle--intro">{proj.subtitle}</p>
+                <img src={proj.img} alt="" class="intro__img"/>
             </section>
+            
+            <div class="portfolio-item-individual">
+                <p>{proj.desc1}</p>
+                <img src={proj.subImg} alt=""/>
+                <p>{proj.desc2}</p>
+                <p>{proj.desc3}</p>
+                <a className="social-list__link" href={proj.githubLink}>
+                    <i className="fab fa-github"></i>
+                </a>
+            </div>
 
-
-            <!-- My services -->
-            <section class="my-services" id="services">
-                <h2 class="section__title section__title--services">What I do</h2>
-                <div class="services">
-                    <div class="service">
-                        <h3>Design + Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div> <!-- / service -->
-
-                    <div class="service">
-                        <h3>E-Commerce</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div> <!-- / service -->
-
-                    <div class="service">
-                        <h3>WordPress</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div> <!-- / service -->
-                </div> <!-- / services -->
-
-                <a href="#work" class="btn">My Work</a>
-            </section>
-
-
-            <!-- About me -->
-            <section class="about-me" id="about">
-                <h2 class="section__title section__title--about">Who I am</h2>
-                <p class="section__subtitle section__subtitle--about">Designer & developer based out of NYC</p>
-
-                <div class="about-me__body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <img src="img/dev-jane-02.jpg" alt="Jane leaning against a bus" class="about-me__img">
-            </section>
-
-            <!-- My Work -->
-            <section class="my-work" id="work">
-                <h2 class="section__title section__title--work">My work</h2>
-                <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
-
-                <div class="portfolio">
-                    <!-- Portfolio item 01 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-01.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 02 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-02.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 03 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-03.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 04 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-04.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 05 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-05.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 06 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-06.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 07 -->
-                    <a href="portfolio-item.html" class="portfolio__item">
-                        <img src="img/portfolio-07.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 08 -->
-                    <a href="#" class="portfolio__item">
-                        <img src="img/portfolio-08.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 09 -->
-                    <a href="#" class="portfolio__item">
-                        <img src="img/portfolio-09.jpg" alt="" class="portfolio__img">
-                    </a>
-
-                    <!-- Portfolio item 0 0-->
-                    <a href="#" class="portfolio__item">
-                        <img src="img/portfolio-10.jpg" alt="" class="portfolio__img">
-                    </a>
-                </div>
-            </section>
         </>
     )
 }

@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Project from './components/Project';
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path='/' element={<Main />}></Route>
-        <Route path='/about' element={<h1>About!! me me me</h1>}></Route>
+        <Route path='/home' element={<Main />}></Route>
+        <Route path='/projects/:id' element={<Project></Project>}></Route>
       </Routes>
 
       <Footer/>
