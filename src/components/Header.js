@@ -22,10 +22,10 @@ function Header() {
             </button>
             <nav className="nav">
                 <ul className="nav__list">
-                    <li className="nav__item"><Link to='/home#home' className="nav__link" onClick={resetNavToggle}>Home</Link></li>
-                    <li className="nav__item"><Link to='home#services' className="nav__link" onClick={resetNavToggle}>My Services</Link></li>
-                    <li className="nav__item"><Link to='home#about' className="nav__link" onClick={resetNavToggle}>About me</Link></li>
-                    <li className="nav__item"><Link to='/home#work' className="nav__link" onClick={resetNavToggle}>My Work</Link></li>
+                    <li className="nav__item"><Link to='/#home' className="nav__link" onClick={resetNavToggle}>Home</Link></li>
+                    <li className="nav__item"><Link to='/#services' className="nav__link" onClick={resetNavToggle}>My Services</Link></li>
+                    <li className="nav__item"><Link to='/#about' className="nav__link" onClick={resetNavToggle}>About me</Link></li>
+                    <li className="nav__item"><Link to='/#work' className="nav__link" onClick={resetNavToggle}>My Work</Link></li>
                 </ul>
             </nav>
         </header>

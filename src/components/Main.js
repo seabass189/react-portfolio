@@ -2,11 +2,29 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import headshot from '../assets/sebastian.jpg';
 import projectImg from '../assets/proj.png'
+// import { Context } from '../Context';
+import PortfolioItem from './PortfolioItem';
+// import PortfolioItem from './Project';
+import {array} from 'prop-types'
 
-function Main(props) {
-    console.log('props', props);
+function Main({allProjects}) {
+    // console.log('props', props);
     const {pathname, hash, key} = useLocation();
     console.log('loc', useLocation());
+    // const {allProjects} = useContext(Context);
+    console.log('allProjects', allProjects);
+    if (allProjects.length === 0) {
+        allProjects = JSON.parse(sessionStorage.getItem('projects'));
+    }
+
+    const projectsElems = allProjects.map(proj => (
+        <PortfolioItem key={proj.id}
+            id={proj.id}
+            title={proj.title}
+            title2={proj.title2}
+            img={proj.img}
+        ></PortfolioItem>
+    ));
 
     useEffect(() => {
         if(hash === '') {
@@ -79,6 +97,7 @@ function Main(props) {
                 <p className="section__subtitle section__subtitle--work">A selection of my range of work</p>
                 
                 <div className="portfolio">
+                    {projectsElems}
                     {/* Portfolio item 01 */}
                     <Link to="/projects/1" className="portfolio__item">
                         <img src={projectImg} alt="" className="portfolio__img"/>
@@ -86,12 +105,16 @@ function Main(props) {
                     
                     {/* Portfolio item 02 */}
                     <Link to="/projects/2" className="portfolio__item">
-                        <img src={[projectImg]} alt="" className="portfolio__img"/>
+                        <img src={projectImg} alt="" className="portfolio__img"/>
                     </Link>
                 </div>
             </section>
         </>
     );
+}
+
+Main.propTypes = {
+    allProjects: array
 }
 
 export default Main;
