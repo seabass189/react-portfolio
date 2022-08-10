@@ -13,7 +13,7 @@ function Project({allProjects}) {
         allProjects = JSON.parse(sessionStorage.getItem('projects'));
     }
 
-    const proj = allProjects.find(p => p.id == id);
+    const proj = allProjects.find(p => String(p.id) === id);
     console.log(proj);
 
     return (
@@ -32,15 +32,16 @@ function Project({allProjects}) {
                 <p>{proj.desc2}</p>
                 <p>{proj.desc3}</p>
                 <div className='actions'>
-                    <a className="social-list__link git-link" href={proj.githubLink}>
-                        <i className="fab fa-github"></i>
+                    <a className="social-list__link git-link" href={proj.githubLink} target="_blank" rel="noreferrer noopener">
+                        <i className="fab fa-github fa-2xl"></i> Code
                     </a>
-                    <a className="social-list__link git-link" href={proj.githubPagesLink}>
-                        <i className="fab fa-github"></i> Pages
-                    </a>
-                    <br></br>
-                    <Link to="/#work" className="back-btn">Back to projects</Link>
+                    {proj.githubPagesLink &&
+                        <a className="social-list__link git-page-link" href={proj.githubPagesLink} target="_blank" rel="noreferrer noopener">
+                            <i className="fa-solid fa-star fa-2xl"></i> Pages
+                        </a>
+                    }
                 </div>
+                <Link to="/#work" className="btn back-btn">Back to projects</Link>
             </div>
 
         </>

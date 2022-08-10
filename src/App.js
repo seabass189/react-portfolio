@@ -7,18 +7,19 @@ import Footer from './components/Footer';
 import Project from './components/Project';
 
 function App() {
-  const [allProjects, setAllProjects] = useState([])
+  const [allProjects, setAllProjects] = useState([]);
 
   useEffect(() => {
+    console.log('hello!!!!!!!!!!');
     fetch('https://seabass189.github.io/React-TodoApp/projects.json')
       .then(res => res.json())
       .then(data => {
         // console.log('url', url);
-        console.log(data);
+        console.log('data', data);
         setAllProjects(data);
         sessionStorage.setItem('projects', JSON.stringify(data));
       })
-  }, [])
+  }, []);
 
   // function toggleFavorite(id) {
     //     const updatedArr = allProjects.map(photo => {

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import headshot from '../assets/sebastian.jpg';
-import projectImg from '../assets/proj.png'
 // import { Context } from '../Context';
 import PortfolioItem from './PortfolioItem';
 // import PortfolioItem from './Project';
@@ -98,15 +97,6 @@ function Main({allProjects}) {
                 
                 <div className="portfolio">
                     {projectsElems}
-                    {/* Portfolio item 01 */}
-                    <Link to="/projects/1" className="portfolio__item">
-                        <img src={projectImg} alt="" className="portfolio__img"/>
-                    </Link>
-                    
-                    {/* Portfolio item 02 */}
-                    <Link to="/projects/2" className="portfolio__item">
-                        <img src={projectImg} alt="" className="portfolio__img"/>
-                    </Link>
                 </div>
             </section>
         </>

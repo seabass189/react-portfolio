@@ -483,6 +483,8 @@ header {
   padding: 0 2em 2em;
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-item-individual p {
@@ -492,12 +494,12 @@ header {
 }
 
 .actions {
-  /* background: red; */
-  /* display: flex;
-  justify-content: center; */
-  grid-template-columns: 
-    1fr 1fr,
-    1fr;
-  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  margin-bottom: 1em;
+}
+
+.back-btn {
   margin: auto;
 }
