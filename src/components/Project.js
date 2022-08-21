@@ -28,7 +28,7 @@ function Project({allProjects}) {
             
             <div className="portfolio-item-individual">
                 <p>{proj.desc1}</p>
-                <img src={proj.subImg} alt=""/>
+                {proj.subImg && <img src={proj.subImg} alt=""/>}
                 <p>{proj.desc2}</p>
                 <p>{proj.desc3}</p>
                 <div className='actions'>

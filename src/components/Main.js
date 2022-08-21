@@ -12,9 +12,9 @@ function Main({allProjects}) {
     console.log('loc', useLocation());
     // const {allProjects} = useContext(Context);
     console.log('allProjects', allProjects);
-    if (allProjects.length === 0) {
-        allProjects = JSON.parse(sessionStorage.getItem('projects'));
-    }
+    // if (allProjects.length === 0) {
+    //     allProjects = JSON.parse(sessionStorage.getItem('projects'));
+    // }
 
     const projectsElems = allProjects.map(proj => (
         <PortfolioItem key={proj.id}
@@ -48,7 +48,7 @@ function Main({allProjects}) {
                 <h1 className="section__title section__title--intro">
                     Hi, I am <strong>Sebastian<br/>Hernandez</strong>
                 </h1>
-                <p className="section__subtitle section__subtitle--intro">front-end dev</p>
+                <p className="section__subtitle section__subtitle--intro">full stack dev</p>
                 <img src={headshot} alt="Sebastian Hernandez smiling" className="intro__img"/>
             </section>
             

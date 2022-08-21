@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     console.log('hello!!!!!!!!!!');
-    fetch('https://seabass189.github.io/React-TodoApp/projects.json')
+    fetch('https://seb-react-portfolio.s3.us-west-1.amazonaws.com/files/projects.json')
       .then(res => res.json())
       .then(data => {
         // console.log('url', url);
